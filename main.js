@@ -17,7 +17,11 @@
 
 //essendo il ns file jquery caricato nell'head per prima cosa inseriamo un comando che attiverà le nostre azioni dopo il caricameto della pagina
 //1 per prima cosa agiremo sulle icone frecce per scorrere le immagini avanti e dietro
+//si nota che nel file html c'è una classe active che mostra la img visibile sulla pagina.
+//qst classe deve andare avanti tra le 4 img del ns html.
 $(document).ready(function() {
 
-  
+  $("fa-angle-right").click(function() {
+    $("img.first").next().css("active")
+  });
 });
