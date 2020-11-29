@@ -21,7 +21,11 @@
 //qst classe deve andare avanti tra le 4 img del ns html.
 $(document).ready(function() {
 
-  $("fa-angle-right").click(function() {
-    $("img.first").next().css("active")
-  });
+  $(".fa-angle-right").click(function() {
+    // console log per vedere se la freccia risponde al click;
+    console.log("click");
+    // adesso dobbiamo vedere su cosa deve andare ad agire il click;
+    $("img.first").removeClass("first active").next().addClass("first active");
+    
+});
 });
