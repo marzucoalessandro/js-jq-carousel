@@ -25,7 +25,11 @@ $(document).ready(function() {
     // console log per vedere se la freccia risponde al click;
     console.log("click");
     // adesso dobbiamo vedere su cosa deve andare ad agire il click;
+
     $("img.first").removeClass("first active").next().addClass("first active");
-    
-});
+    $(".fa-circle.first").removeClass("first active").next().addClass("first active");
+
+  });
+
+
 });
