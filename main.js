@@ -25,9 +25,22 @@ $(document).ready(function() {
     // console log per vedere se la freccia risponde al click;
     console.log("click");
     // adesso dobbiamo vedere su cosa deve andare ad agire il click;
+    if ($("div img").hasClass("first")) {
+      $("div img.active").removeClass("active").next().addClass("active");}
+     // } else if ($("div img").hasClass("last")) {
+    //   $("div img").removeClass("last").addClass("first active");
+    // }
 
-    $("img.first").removeClass("first active").next().addClass("first active");
-    $(".fa-circle.first").removeClass("first active").next().addClass("first active");
+
+    $("div i.active").removeClass("active").next().addClass("active");
+
+  });
+
+  $(".fa-angle-left").click(function() {
+    // verifichiamo il bottone di reverse;
+    console.log("clickrev");
+    $("div img.active").removeClass("active").prev().addClass("active");
+    $("div i.active").removeClass("active").prev().addClass("active");
 
   });
 
