@@ -44,7 +44,17 @@ $(document).ready(function() {
         currentImage = $("img.first");
         currentImage.addClass("active");
      }
+     var pallino = $(".nav > i.active");
+     pallino.removeClass("active");
+     pallino.next("i").addClass("active");
+     if (pallino.hasClass("last")) {
+        pallino = $("i.first");
+        pallino.addClass("active");
+     }
    }
+
+
+
 
    function prevSlide() {
      var currentImage = $("img.active");
@@ -55,8 +65,16 @@ $(document).ready(function() {
         currentImage = $("img.last");
         currentImage.addClass("active");
      }
+     var pallino = $(".nav > i.active");
+     pallino.removeClass("active");
+     pallino.prev("i").addClass("active");
+     if (pallino.hasClass("first")) {
+        pallino = $("i.last");
+        pallino.addClass("active");
+     }
    }
-   
+
+
 
 });
 
