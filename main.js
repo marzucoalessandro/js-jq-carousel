@@ -21,28 +21,75 @@
 //qst classe deve andare avanti tra le 4 img del ns html.
 $(document).ready(function() {
 
-  $(".fa-angle-right").click(function() {
-    // console log per vedere se la freccia risponde al click;
-    console.log("click");
-    // adesso dobbiamo vedere su cosa deve andare ad agire il click;
-    if ($("div img").hasClass("first")) {
-      $("div img.active").removeClass("active").next().addClass("active");}
-     // } else if ($("div img").hasClass("last")) {
-    //   $("div img").removeClass("last").addClass("first active");
-    // }
+  var prev = $(".fa-angle-left");
+  var next = $(".fa-angle-right");
 
 
-    $("div i.active").removeClass("active").next().addClass("active");
+  prev.click(function(){
+    console.log("prev");
+    prevSlide();
+  })
 
-  });
+  next.click(function() {
+    console.log("next");
+    (nextSlide());
+  })
 
-  $(".fa-angle-left").click(function() {
-    // verifichiamo il bottone di reverse;
-    console.log("clickrev");
-    $("div img.active").removeClass("active").prev().addClass("active");
-    $("div i.active").removeClass("active").prev().addClass("active");
+   function nextSlide(){
+     var currentImage = $("img.active");
+     currentImage.removeClass("active");
+     currentImage.next("img").addClass("active");
+     if (currentImage.hasClass("last")) {
+        console.log("lastSlide");
+        currentImage = $("img.first");
+        currentImage.addClass("active");
+     }
+   }
 
-  });
-
+   function prevSlide() {
+     var currentImage = $("img.active");
+     currentImage.removeClass("active");
+     currentImage.prev("img").addClass("active");
+     if (currentImage.hasClass("first")) {
+        console.log("firstSlide");
+        currentImage = $("img.last");
+        currentImage.addClass("active");
+     }
+   }
+   
 
 });
+
+
+
+
+
+
+
+
+//   $(".fa-angle-right").click(function() {
+//     // console log per vedere se la freccia risponde al click;
+//     console.log("click");
+//     // adesso dobbiamo vedere su cosa deve andare ad agire il click;
+//     if ($("div img").hasClass("first")) {
+//       $("div img.active").removeClass("active").next().addClass("active");
+//     } else if ($("div img").hasClass("last")) {
+//       $("div.images .first").addClass("active");
+//     }
+//
+//
+//
+//
+//     $("div i.active").removeClass("active").next().addClass("active");
+//
+//   });
+//
+//   $(".fa-angle-left").click(function() {
+//     // verifichiamo il bottone di reverse;
+//     console.log("clickrev");
+//     $("div img.active").removeClass("active").prev().addClass("active");
+//     $("div i.active").removeClass("active").prev ().addClass("active");
+//
+//   });
+//
+//
